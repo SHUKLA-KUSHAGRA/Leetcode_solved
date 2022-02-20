@@ -34,4 +34,4 @@ int main()
 # Navigation
 - [Easy Labelled](https://github.com/SHUKLA-KUSHAGRA/Leetcode_solved/tree/main/Leetcode%20Easy)
 - [Medium Labelled](https://github.com/SHUKLA-KUSHAGRA/Leetcode_solved/tree/main/Leetcode%20medium)
-- [Hard Labelled](https://github.com/SHUKLA-KUSHAGRA/Leetcode_solved/tree/main/Leetcode%20Hard)
+- [Hard Labelled](https://github.com/SHUKLA-KUSHAGRA/Leetcode_solved/tree/main/Leetcode%20hard)
