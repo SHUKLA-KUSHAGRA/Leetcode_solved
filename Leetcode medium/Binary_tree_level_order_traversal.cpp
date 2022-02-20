@@ -34,5 +34,5 @@ public:
             }
             result.push_back(ans);
         }
-    return result;
-}
+        return result;
+    }
