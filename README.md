@@ -31,3 +31,5 @@ int main()
 # Remarks
 - If you feel this conent is good make sure to give a ⭐ to this repository it will give me a boost to continue the series of solutions.
 - Keep learning have fun.
+# Navigation
+- [Easy Marked](https://github.com/SHUKLA-KUSHAGRA/Leetcode_solved/tree/main/Leetcode%20Easy)
