@@ -11,16 +11,17 @@ class Solution
     vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
     {
         // Code here
-        priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
+        // USING SET DATA STRUCTURE
+        set<pair<int,int>>st;
         vector<int>dist(V,INT_MAX);
-        pq.push({S,0});
+        st.insert({0,S});
         dist[S]=0;
-        while(pq.size()!=0)
+        while(st.size()!=0)
         {
-            pair<int,int>p=pq.top();
-            int node=p.first;
-            int d=p.second;
-            pq.pop();
+            auto p=*st.begin();
+            int d=p.first;
+            int node=p.second;
+            st.erase({d,node});
             for(auto it:adj[node])
             {
                 int v=it[0];
@@ -30,13 +31,40 @@ class Solution
                     if(dist[node]+w<dist[v])
                     {
                         dist[v]=dist[node]+w;
-                        pq.push({v,d+w});
+                        st.insert({d+w,v});
                     }
                 }
             }
         }
         return dist;
     }
+        // USING PRIORITY QUEUE DATA STRUCTURE
+    //     priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>>pq;
+    //     vector<int>dist(V,INT_MAX);
+    //     pq.push({S,0});
+    //     dist[S]=0;
+    //     while(pq.size()!=0)
+    //     {
+    //         pair<int,int>p=pq.top();
+    //         int node=p.first;
+    //         int d=p.second;
+    //         pq.pop();
+    //         for(auto it:adj[node])
+    //         {
+    //             int v=it[0];
+    //             int w=it[1];
+    //             if(dist[node]!=INT_MAX)
+    //             {
+    //                 if(dist[node]+w<dist[v])
+    //                 {
+    //                     dist[v]=dist[node]+w;
+    //                     pq.push({v,d+w});
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     return dist;
+    // }
 };
 
 
