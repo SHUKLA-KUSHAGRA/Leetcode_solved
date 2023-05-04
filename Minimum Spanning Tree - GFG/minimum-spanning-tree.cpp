@@ -13,7 +13,7 @@ class Solution
 	        return parent[x];
 	    return parent[x]=find(parent,parent[x]);
 	}
-	void unionBySize(vector<int>&parent,vector<int>&rank,int x,int y)
+	void unionByRank(vector<int>&parent,vector<int>&rank,int x,int y)
 	{
 	    int parx=find(parent,x);
 	    int pary=find(parent,y);
@@ -54,16 +54,14 @@ class Solution
             int wt=p.first;
             int x=p.second.first;
             int y=p.second.second;
-            // cout<<wt<<" "<<x<<" "<<y<<endl;
             int parx = find(parent,x);
             int pary = find(parent,y);
             if(parx!=pary)
             {
                 sum+=wt;
-                unionBySize(parent,rank,x,y);
+                unionByRank(parent,rank,x,y);
                 parx=find(parent,x);
                 pary=find(parent,y);
-                // cout<<parx<<" "<<pary<<endl;
             }
         }
         return sum;
